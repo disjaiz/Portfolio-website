@@ -30,7 +30,7 @@ function DefaultPage() {
 
         {/* left */}
         <div className='lg:w-[48%] pt-12 md:pt-16 lg:sticky lg:top-0  lg:max-h-screen lg:py-24'>
-            <h1 className='text-5xl font-extrabold mb-3 sm:text-5xl text-slate-200'>Siddhi Jaiswal</h1>
+            <h1 className='text-4xl font-extrabold mb-3 sm:text-5xl text-slate-200'>Siddhi Jaiswal</h1>
             <h4 className='text-lg  font-medium mb-4 sm:text-xl text-slate-200'>MERN Full Stack Developer</h4>
             <p className='max-w-xs text-[#94A3B8]'>I build accessible, pixel-perfect digital experiences for the web.</p>
 
@@ -371,12 +371,19 @@ function DefaultPage() {
             </div>
           </section>
 
-          <footer class="flex justify-start max-w-md pb-6 text-sm text-slate-500 sm:pb-0 ">
-            <p >Made with&nbsp;</p> 
-            <svg viewBox="0 0 32 32" width="18" height="18">
-               <path fill="teal" d="M16 28.2l-1.8-1.6C7.9 21.1 4 17.6 4 13.3 4 9.8 6.7 7 10.2 7c2 0 3.9 1 5.1 2.5C16.5 8 18.4 7 20.4 7 23.9 7 26.6 9.8 26.6 13.3c0 4.3-3.9 7.8-10.2 13.3l-0.4 0.4z"/>
-            </svg> 
-            <p>&nbsp;by Siddhi Jaiswal&nbsp;&bull;&nbsp;Portfolio 2026</p>
+          <footer className="pb-6 text-sm max-w-md text-slate-500 sm:pb-0">
+            <span className="inline">
+                  Made with{" "}
+                  <svg
+                    viewBox="0 0 32 32"
+                    width="16"
+                    height="16"
+                    className="inline align-middle fill-teal-400/80"
+                  >
+                    <path d="M16 28.2l-1.8-1.6C7.9 21.1 4 17.6 4 13.3 4 9.8 6.7 7 10.2 7c2 0 3.9 1 5.1 2.5C16.5 8 18.4 7 20.4 7 23.9 7 26.6 9.8 26.6 13.3c0 4.3-3.9 7.8-10.2 13.3l-0.4 0.4z"/>
+                  </svg>{" "}
+                  by Siddhi Jaiswal • Portfolio 2026
+                </span>
           </footer>         
         </div>
  
