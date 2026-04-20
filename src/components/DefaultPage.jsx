@@ -26,11 +26,12 @@ function DefaultPage() {
 
   return (
     <>
-      <div className='relative scroll-smooth lg:gap-4 lg:flex lg:justify-between bg-slate-850 text-blue-100 w-screen h-screen lg:relative overflow-x-hidden  
-      px-6 pb-12 md:px-12 md:pb-16  lg:py-0 lg:px-40 roboto-font tracking-wide select-text '>
+    <div className='w-full'>
+      <div className='mx-auto min-h-screen max-w-screen-xl relative scroll-smooth lg:gap-4 lg:flex lg:justify-between lg:items-start bg-slate-850 text-blue-100   
+      px-6 pb-12 md:px-12 md:pb-16 lg:py-0 roboto-font tracking-wide select-text'>
 
         {/* left */}
-        <div className='lg:w-[48%] pt-12 md:pt-16 lg:sticky lg:top-0  lg:max-h-screen lg:py-24'>
+        <div className='lg:w-[48%] pt-12 md:pt-16 lg:py-24 lg:sticky lg:max-h-screen lg:top-0'>
             <h1 className='text-4xl font-extrabold mb-3 sm:text-5xl text-slate-200'>Siddhi Jaiswal</h1>
             <h4 className='text-lg  font-medium mb-4 sm:text-xl text-slate-200'>MERN Full Stack Developer</h4>
             <p className='max-w-xs text-[#94A3B8]'>I build accessible, pixel-perfect digital experiences for the web.</p>
@@ -304,8 +305,8 @@ function DefaultPage() {
             </div>
           </section>
 
-          <footer className="pb-6 text-sm max-w-md text-slate-500 sm:pb-0">
-            <span className="inline-flex items-center gap-1">
+          <footer className="pb-6 text-[12px] sm:text-sm max-w-md text-slate-500 sm:pb-0">
+            <span className="inline-flex flex-wrap items-center gap-1 ">
                   Made with{" "}
                   <svg
                     viewBox="0 0 32 32"
@@ -319,8 +320,8 @@ function DefaultPage() {
                 </span>
           </footer>         
         </div>
- 
-      </div>  
+       </div>
+    </div>
     </>
   )
 }
