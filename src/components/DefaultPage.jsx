@@ -1,7 +1,8 @@
 import {useEffect} from 'react'
-import imgOne from '../assets/images/imgOne.jpg'
-import imgTwo from '../assets/images/imgTwo.jpg'
-import imgThree from '../assets/images/imgThree.jpg'
+
+import linkTreeImg from '../assets/images/link_tree_site_img.png'
+import formbotImg from '../assets/images/formbot_image.png'
+import linkShortenerImg from '../assets/images/linkShortener.png'
 
 import linkedin from '../assets/svgs/icons8-linkedin.svg'
 import github from '../assets/svgs/icons8-github.svg'
@@ -88,7 +89,7 @@ function DefaultPage() {
           <a  
             className='text-teal-300 inline-block shimmer-text lg:px-4.5 py-2 rounded-full lg:hover:bg-teal-400/10 
             lg:hover:border lg:hover:border-teal-100/10' 
-            href='/resumes/MyResumeDraft3.pdf'
+            href='/resumes/MyResume.pdf'
             target='_blank'
             rel="noopener noreferrer"
             >
@@ -124,64 +125,8 @@ function DefaultPage() {
               </p>
             </div>
           </section>
-          {/* <section id="skills" className="mb-20 h-screen">
-            <div>
-              <ul className='flex flex-col'>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='inline-block flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    JavaScript
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    Java
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    React.js
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    Node.js
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    Express.js
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    MongoDB
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    Git
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    Github
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                   HTML
-                  </div>
-                </li>
-                <li className='mr-2.5 mt-3.5'>
-                  <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
-                    CSS
-                  </div>
-                </li>
-  
-              </ul>
-            </div>
-          </section> */}
-            <section id="skills" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
+
+          <section id="skills" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
             <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
               <h2 className='font-bold text-sm text-white tracking-widest text-slate-200'>SKILLS</h2>
             </div>
@@ -198,6 +143,11 @@ function DefaultPage() {
                   </div>
                 </li>
                 <li className='mr-2.5 mt-3.5'>
+                  <div className='inline-block flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
+                    Python
+                  </div>
+                </li>
+                <li className='mr-2.5 mt-3.5'>
                   <div className='flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
                     React.js
                   </div>
@@ -237,36 +187,15 @@ function DefaultPage() {
                     CSS
                   </div>
                 </li>
+                  <li className='mr-2.5 mt-3.5'>
+                  <div className='inline-block flex items-center px-4 py-2 text-sm font-medium leading-5 rounded-full bg-teal-400/10 text-teal-300'>
+                    TailwindCSS
+                  </div>
+                </li>
   
               </ul>
             </div>
           </section>
-          {/* <section id="skills" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
-           <div className=" my-0 mx-auto flex flex-col gap-3 max-w-xs bg-teal-400/6 rounded-lg border border-teal-400/20">
-
-             {[
-               "JavaScript",
-               "Java",
-               "React.js",
-               "Node.js",
-               "Express.js",
-               "MongoDB",
-               "Git",
-               "GitHub",
-               "HTML",
-               "CSS",
-             ].map((skill) => (
-               <div
-                 key={skill}
-                 className="w-full px-4 py-2 text-sm font-medium  
-                              text-teal-300"
-               >
-                 {skill}
-               </div>
-             ))}
-
-  </div>
-          </section> */}
 
           <section id="projects" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
             <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
@@ -294,11 +223,13 @@ function DefaultPage() {
                           </h3>
                         </a>
                       
-                      <p class="mt-2 text-sm leading-normal">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel reprehenderit dicta itaque distinctio,
-                        ut rem ipsum doloribus quod Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                      <p class="mt-2 text-sm leading-normal">
+                          A profile-based web app that lets users organize and share multiple links through a single public page.
+                          Users can customize layouts, themes, and styles to design how their links are presented.
+                          Includes analytics to track link clicks and traffic insights, along with account management settings.
                       </p>
                     </div>
-                    <img src={imgOne} width="200" height="48" loading='lazy' alt="Linktree web app img" 
+                    <img src={linkTreeImg} width="200" height="48" loading='lazy' alt="Linktree web app img" 
                       class="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" 
                       style={{color: "transparent"}}
                     />
@@ -325,12 +256,12 @@ function DefaultPage() {
                             </svg>
                           </h3>
                       </a>
-                      <p class="mt-2 text-sm leading-normal"  >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel reprehenderit dicta itaque distinctio,
-                        ut rem ipsum doloribus quod officia iusto perspiciatis.
-                        
+                      <p class="mt-2 text-sm leading-normal"  >A web app for creating and sharing custom forms with ease.
+                        Build forms using various input types, organize them into folders, and share them via links.
+                        Responses are collected and stored in a structured dashboard, with options for collaborative access.
                       </p>
                     </div>
-                    <img src={imgTwo} width="200" height="48" loading='lazy' alt="Linktree web app img" 
+                    <img src={formbotImg} width="200" height="48" loading='lazy' alt="Formbot web app img" 
                     class="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" 
                     style={{color: "transparent"}}
                     />
@@ -346,7 +277,7 @@ function DefaultPage() {
                           md:-inset-y-5 md:border-t md:border-white/7  lg:block group-hover:block opacity-0 
                           group-hover:opacity-100 shadow-[0_0_90px_rgba(255,255,255,0.02)]"></div> 
                           <h3 className="font-medium text-slate-200 group-hover:text-[#49b4ac] tracking-wider">
-                            <span>Link Shortener Website</span>
+                            <span>Trimly Website</span>
                                   <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 640 640"
@@ -356,11 +287,13 @@ function DefaultPage() {
                             </svg>
                           </h3>
                       </a>
-                      <p class="mt-2 text-sm leading-normal"  >Lorem ipsum dolor,  consectetur adipisicing elit. Maxime natus voluptas officia iusto perspiciatis.
-                        maxime eos
+                      <p class="mt-2 text-sm leading-normal"  >
+                        A web app that lets users create and manage short, shareable links from long URLs.
+                        Links are organized in tables with details like creation time, custom names, and expiry-based activation.
+                        Includes analytics, editing options, and tracking of link activity and recent search insights.
                       </p>
                     </div>
-                    <img src={imgThree} width="200" height="48" loading='lazy' alt="Linktree web app img" 
+                    <img src={linkShortenerImg} width="200" height="48" loading='lazy' alt="Link Shortener web app img" 
                     class="aspect-video object-cover rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" 
                     style={{color: "transparent"}}
                     />
@@ -372,7 +305,7 @@ function DefaultPage() {
           </section>
 
           <footer className="pb-6 text-sm max-w-md text-slate-500 sm:pb-0">
-            <span className="inline">
+            <span className="inline-flex items-center gap-1">
                   Made with{" "}
                   <svg
                     viewBox="0 0 32 32"
