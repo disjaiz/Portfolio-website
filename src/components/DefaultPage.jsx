@@ -9,6 +9,8 @@ import github from '../assets/svgs/icons8-github.svg'
 import instagram from '../assets/svgs/icons8-instagram.svg'
 import twitter from '../assets/svgs/icons8-x.svg'
 
+import hmmBadge from '../assets/images/hmm_business_plan_development_badge.png'
+
 function DefaultPage() {
 
    useEffect(() => {
@@ -90,7 +92,7 @@ function DefaultPage() {
           <a  
             className='text-teal-300 inline-block shimmer-text lg:px-4.5 py-2 rounded-full lg:hover:bg-teal-400/10 
             lg:hover:border lg:hover:border-teal-100/10' 
-            href='/resumes/MyResume.pdf'
+            href='/resumes/MyResumeEnhanced.pdf'
             target='_blank'
             rel="noopener noreferrer"
             >
@@ -304,6 +306,42 @@ function DefaultPage() {
               </ul>
             </div>
           </section>
+
+
+          <section id="Certificates" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
+             <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
+              <h2 className='font-bold text-sm text-white tracking-widest text-slate-200'>CERTIFICATES</h2>
+            </div>
+                <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-4 md:gap-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                  <div class="z-10 sm:order-2 sm:col-span-6">
+                      <a href="/certificates/Harvard_Management_Program_Certificates.pdf" className="group"  target="_blank" rel="noopener noreferrer">
+                        <div className="absolute -inset-x-4 -inset-y-2.5 hidden rounded bg-slate-500/10 transition md:-inset-x-7 
+                        md:-inset-y-5 md:border-t md:border-white/7  lg:block group-hover:block opacity-0 
+                        group-hover:opacity-100 shadow-[0_0_90px_rgba(255,255,255,0.02)] "></div> 
+                        <h3 className="font-medium text-slate-200 group-hover:text-[#49b4ac] tracking-wider">
+                          <span>HMM Certificates Collection</span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"
+                            className="inline-block ml-2 w-4 h-4 fill-current"
+                          >
+                            <path d="M416 224C398.3 224 384 209.7 384 192C384 174.3 398.3 160 416 160L576 160C593.7 160 608 174.3 608 192L608 352C608 369.7 593.7 384 576 384C558.3 384 544 369.7 544 352L544 269.3L374.6 438.7C362.1 451.2 341.8 451.2 329.3 438.7L224 333.3L86.6 470.6C74.1 483.1 53.8 483.1 41.3 470.6C28.8 458.1 28.8 437.8 41.3 425.3L201.3 265.3C213.8 252.8 234.1 252.8 246.6 265.3L352 370.7L498.7 224L416 224z" />
+                          </svg>
+                        </h3>
+                      </a>
+                    
+                    <p class="mt-2 text-sm leading-normal">
+                      Completed the <span className='text-white'>Harvard ManageMentor program</span> through Chandigarh University, covering 10 modules in leadership and management.
+                      Built practical skills in decision-making, strategy, innovation, and effective team collaboration.
+                    </p>
+                  </div>
+                  <img src={hmmBadge} width={100} height={100}  loading='lazy' alt="HMM Badge img" 
+                    class="object-cover rounded transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1" 
+                    style={{color: "transparent"}}
+                  />
+              </div>
+          </section>
+
 
           <footer className="pb-6 text-[12px] sm:text-sm max-w-md text-slate-500 sm:pb-0">
             <span className="inline-flex flex-wrap items-center gap-1 ">
