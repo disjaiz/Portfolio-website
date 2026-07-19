@@ -13,3 +13,16 @@ If you are developing a production application, we recommend using TypeScript wi
 
 
 ---- Official Portfolio Website ----
+
+<!-- decrese font size about section  tick -->
+<!-- replace insta with leetcode    tick -->  
+
+<!-- see heading font size and increase accordingly  tick -->
+<!-- use influencing words to describe yourself in about section -->
+
+<!-- enhance UI of 3 prjocts landing page -->
+<!-- add theme (light and dark mode) tick (partially done)-->
+
+<!-- add Get in touch headind containing - name, email, message , send messsage inputs -->
+
+<!-- add up arrow to scroll automatically to top -->

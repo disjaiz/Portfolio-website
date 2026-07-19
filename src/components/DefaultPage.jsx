@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 
 import linkTreeImg from '../assets/images/link_tree_site_img.png'
 import formbotImg from '../assets/images/formbot_image.png'
@@ -6,12 +6,16 @@ import linkShortenerImg from '../assets/images/linkShortener.png'
 
 import linkedin from '../assets/svgs/icons8-linkedin.svg'
 import github from '../assets/svgs/icons8-github.svg'
-import instagram from '../assets/svgs/icons8-instagram.svg'
 import twitter from '../assets/svgs/icons8-x.svg'
+import leetcode from '../assets/svgs/leetcode.svg'
+
+import lightThemeIcon from '../assets/svgs/light-mode-svgrepo-com.svg'
+import darkThemeIcon from '../assets/svgs/dark-mode-svgrepo-com.svg'
 
 import hmmBadge from '../assets/images/hmm_business_plan_development_badge.png'
 
 function DefaultPage() {
+  const [themeMode, setThemeMode] = useState("light");
 
    useEffect(() => {
     const handleMouseMove = (e) => {
@@ -28,35 +32,43 @@ function DefaultPage() {
 
   return (
     <>
-    <div className='w-full'>
+    <div className={`w-full relative ${themeMode === "light" ? "bg-stone-50": "auto"}`}>
+      {/* theme mode selector*/}
+      <div className='fixed top-5 right-5 hover:bg-gray-500/40 rounded p-2 cursor-pointer z-50' onClick={() => setThemeMode(themeMode === "dark" ? "light" : "dark")}>
+         <img src={`${themeMode === "dark" ? lightThemeIcon : darkThemeIcon}`} alt="theme"  height={20} width={20} />
+      </div>
+
       <div className='mx-auto min-h-screen max-w-screen-xl relative scroll-smooth lg:gap-4 lg:flex lg:justify-between lg:items-start bg-slate-850 text-blue-100   
-      px-6 pb-12 md:px-12 md:pb-16 lg:py-0 roboto-font tracking-wide select-text'>
+        px-6 pb-12 md:px-12 md:pb-16 lg:py-0 roboto-font tracking-wide select-text'>
 
         {/* left */}
         <div className='lg:w-[48%] pt-12 md:pt-16 lg:py-24 lg:sticky lg:max-h-screen lg:top-0'>
-            <h1 className='text-4xl font-extrabold mb-3 sm:text-5xl text-slate-200'>Siddhi Jaiswal</h1>
-            <h4 className='text-lg  font-medium mb-4 sm:text-xl text-slate-200'>MERN Full Stack Developer</h4>
+            <h1 className={`text-4xl font-extrabold mb-3 sm:text-5xl  ${themeMode === "light" ? "text-black" : "text-slate-200"}`}>Siddhi Jaiswal</h1>
+            <h4 className={`text-lg  font-medium mb-4 sm:text-xl  ${themeMode === "light" ? "text-black" : "text-slate-200"}`}>MERN Full Stack Developer</h4>
             <p className='max-w-xs text-[#94A3B8]'>I build accessible, pixel-perfect digital experiences for the web.</p>
 
             {/* navbar */}
             <nav className='mt-15 text-[#7a8697] tracking-widest'>
               <ul className='flex lg:flex-col gap-6 text-[12px] font-bold'>
 
-                <li id="nav-list" className="cursor-pointer text-xs font-bold tracking-widest text-slate-500 hover:text-slate-200"
+                <li id="nav-list"
+                    className={`cursor-pointer text-xs font-bold tracking-widest ${themeMode === "light" ? "light text-black" : "dark text-slate-500 hover:text-slate-200"}`}
                     onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}>
-                      <span className="absolute left-0 top-0 text-slate-400">› &nbsp;</span>
-                  <span className='hover:text-base transition-all duration-300'>ABOUT</span>
+                      <span className={`absolute left-0 top-0  ${themeMode === "light" ? "text-black" : "text-slate-400"}`}>› &nbsp;</span>
+                      <span className='hover:text-base transition-all duration-300'>ABOUT</span>
                 </li>
                 
-                <li id="nav-list" className="cursor-pointer text-xs font-bold tracking-widest text-slate-500 hover:text-slate-200"
+                <li id="nav-list" 
+                    className={`cursor-pointer text-xs font-bold tracking-widest ${themeMode === "light" ? "light text-black" : "dark text-slate-500 hover:text-slate-200"}`}
                     onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}>
-                      <span className="absolute left-0 top-0 text-slate-400">› &nbsp;</span>
+                      <span className={`absolute left-0 top-0  ${themeMode === "light" ? "text-black" : "text-slate-400"}`}>› &nbsp;</span>
                   <span className='hover:text-base transition-all duration-300'>SKILLS</span> 
                 </li>
 
-                <li id="nav-list" className="cursor-pointer text-xs font-bold tracking-widest text-slate-500 hover:text-slate-200"
+                <li id="nav-list" 
+                    className={`cursor-pointer text-xs font-bold tracking-widest ${themeMode === "light" ? "light text-black" : "dark text-slate-500 hover:text-slate-200"}`}
                     onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}>
-                      <span className="absolute left-0 top-0 text-slate-400">› &nbsp;</span>
+                      <span className={`absolute left-0 top-0  ${themeMode === "light" ? "text-black" : "text-slate-400"}`}>› &nbsp;</span>
                   <span className='hover:text-base transition-all duration-300'>PROJECTS</span> 
                 </li>
 
@@ -65,22 +77,30 @@ function DefaultPage() {
 
             <ul className='flex gap-6 mt-13 text-[#7a8697] text-[12px] font-bold'>
               <li>
-                <a href="https://www.linkedin.com/in/siddhi-jaiswal-77b015269/" target='_blank' className="inline-block transform transition-transform duration-300 hover:scale-125">
+                <a href="https://www.linkedin.com/in/siddhi-jaiswal-77b015269/" 
+                   target='_blank' 
+                   className="inline-block transform transition-transform duration-300 hover:scale-125">
                      <img src={linkedin} alt="linkedin" height={31} width={31}/>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/disjaiz" target='_blank' className="inline-block transform transition-transform duration-300 hover:scale-125">
+                <a href="https://github.com/disjaiz" 
+                   target='_blank' 
+                   className="inline-block transform transition-transform duration-300 hover:scale-125">
                      <img src={github} alt="github" height={31} width={31}/>
                 </a>
               </li>
               <li>
-                <a href="https://www.instagram.com/siddhijaiiswalll?igsh=eHprMXd0bTYwajNw" target='_blank' className="inline-block transform transition-transform duration-300 hover:scale-125">
-                    <img src={instagram} alt="instagram" height={31} width={31}/>
+                <a href="https://leetcode.com/u/Siddhi_jaiswall/" 
+                   target='_blank' 
+                   className="inline-block transform transition-transform duration-300 hover:scale-125">
+                    <img src={leetcode} alt="instagram" height={31} width={31}/>
                 </a>
               </li>
               <li>
-                <a href="https://x.com/JaiswalSid87831?t=QlH8E2jO68tDBrSv7ndO2A&s=03" target='_blank' className="inline-block transform transition-transform duration-300 hover:scale-125">
+                <a href="https://x.com/JaiswalSid87831?t=QlH8E2jO68tDBrSv7ndO2A&s=03" 
+                   target='_blank' 
+                   className="inline-block transform transition-transform duration-300 hover:scale-125">
                    <img src={twitter} alt="twitter" height={31} width={31}/>
                 </a>
               </li>
@@ -107,18 +127,29 @@ function DefaultPage() {
           </a>
           <section id="about" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
             <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
-              <h2 className='font-bold text-sm text-white tracking-widest text-slate-200'>ABOUT</h2>
+              <h2 className='font-bold text-md text-white tracking-widest text-slate-200'>ABOUT</h2>
             </div>
-            <div>
-              <p className='mb-4'>I'm currently pursuing a Bachelor of Computer Applications 
-                <span className='text-white'> &#x28;BCA&#x29;</span> from <span className='text-white'>Chandigarh University</span>,
-                 with a foundation in computer science through my O-Level qualification.
+            <div className={`leading-relaxed text-sm lg:text-[16px] ${themeMode === "light" ? "text-black" : "text-auto"}`}>
+             <p className="mb-4">
+                I'm currently pursuing a Bachelor of Computer Applications{" "}
+                <span className={themeMode === "light" ? "text-slate-900 font-semibold" : "text-white"}>
+                  (BCA)
+                </span>{" "}
+                from{" "}
+                <span className={themeMode === "light" ? "text-slate-900 font-semibold" : "text-white"}>
+                  Chandigarh University
+                </span>
+                , with a foundation in computer science through my O-Level qualification.
               </p>
-              <p className='mb-4'>I have hands-on experience developing full-stack applications using  
-                <span className='text-white'> React</span>, <span className='text-white'> Node.js</span>,
-                <span className='text-white'> Express.js</span> and <span className='text-white'> MongoDB</span>, with a focus on 
+              <p className='mb-4'>I have hands-on experience developing full-stack applications using{" "}
+                <span cclassName={` ${themeMode === "light" ?  "text-slate-900 font-semibold" : "text-white"}`}> React</span>,
+                 <span className={` ${themeMode === "light" ?  "text-slate-900 font-semibold" : "text-white"}`}> Node.js</span>,
+                <span className={` ${themeMode === "light" ?  "text-slate-900 font-semibold" : "text-white"}`}> Express.js</span>
+                {" "}and 
+                <span className={` ${themeMode === "light" ?  "text-slate-900 font-semibold" : "text-white"}`}> MongoDB</span>, 
+                with a focus on 
                 clean structure and scalable code.
-                  Alongside development, I’m actively improving my problem-solving skills through DSA and real-world projects.
+                Alongside development, I’m actively improving my problem-solving skills through DSA and real-world projects.
               </p>
               <p className='mb-4'>I enjoy working where logic meets creativity, turning ideas into functional products.
                   Outside of tech, I spend time cooking and reading, which helps me stay balanced and focused.
@@ -131,7 +162,7 @@ function DefaultPage() {
 
           <section id="skills" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
             <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
-              <h2 className='font-bold text-sm text-white tracking-widest text-slate-200'>SKILLS</h2>
+              <h2 className='font-bold text-md text-white tracking-widest text-slate-200'>SKILLS</h2>
             </div>
             <div>
               <ul className='flex flex-wrap'>
@@ -202,7 +233,7 @@ function DefaultPage() {
 
           <section id="projects" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
             <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
-              <h2 className='font-bold text-sm text-white tracking-widest text-slate-200'>PROJECTS</h2>
+              <h2 className='font-bold text-md text-white tracking-widest text-slate-200'>PROJECTS</h2>
             </div>
             <div>
               <ul>
@@ -215,7 +246,7 @@ function DefaultPage() {
                           md:-inset-y-5 md:border-t md:border-white/7  lg:block group-hover:block opacity-0 
                           group-hover:opacity-100 shadow-[0_0_90px_rgba(255,255,255,0.02)] "></div> 
                           <h3 className="font-medium text-slate-200 group-hover:text-[#49b4ac] tracking-wider">
-                            <span>Link tree Website</span>
+                            <span className={`${themeMode === "light" ? "text-black" : "text-slate-200"}`}>Link tree Website</span>
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 640 640"
@@ -248,7 +279,7 @@ function DefaultPage() {
                           md:-inset-y-5 md:border-t md:border-white/7  lg:block group-hover:block opacity-0 
                           group-hover:opacity-100 shadow-[0_0_90px_rgba(255,255,255,0.02)]"></div> 
                           <h3 className="font-medium text-slate-200 group-hover:text-[#49b4ac] tracking-wider">
-                            <span>Formbot Website</span>
+                            <span className={`${themeMode === "light" ? "text-black" : "text-slate-200"}`}>Formbot Website</span>
 
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +311,7 @@ function DefaultPage() {
                           md:-inset-y-5 md:border-t md:border-white/7  lg:block group-hover:block opacity-0 
                           group-hover:opacity-100 shadow-[0_0_90px_rgba(255,255,255,0.02)]"></div> 
                           <h3 className="font-medium text-slate-200 group-hover:text-[#49b4ac] tracking-wider">
-                            <span>Trimly Website</span>
+                            <span className={`${themeMode === "light" ? "text-black" : "text-slate-200"}`}>Trimly Website</span>
                                   <svg
                               xmlns="http://www.w3.org/2000/svg"
                               viewBox="0 0 640 640"
@@ -310,7 +341,7 @@ function DefaultPage() {
 
           <section id="Certificates" className="mb-20 scroll-mt-16 md:mb-20 lg:mb-36 lg:scroll-mt-24">
              <div className='sticky z-20 top-0 mb-4 -mx-12 px-12 py-3 w-screen bg-slate-900/5 text-slate-200 backdrop-blur lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0'>
-              <h2 className='font-bold text-sm text-white tracking-widest text-slate-200'>CERTIFICATES</h2>
+              <h2 className='font-bold text-md text-white tracking-widest text-slate-200'>CERTIFICATES</h2>
             </div>
                 <div class="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-4 md:gap-2 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
                   <div class="z-10 sm:order-2 sm:col-span-6">
@@ -319,7 +350,7 @@ function DefaultPage() {
                         md:-inset-y-5 md:border-t md:border-white/7  lg:block group-hover:block opacity-0 
                         group-hover:opacity-100 shadow-[0_0_90px_rgba(255,255,255,0.02)] "></div> 
                         <h3 className="font-medium text-slate-200 group-hover:text-[#49b4ac] tracking-wider">
-                          <span>HMM Certificates Collection</span>
+                          <span className={`${themeMode === "light" ? "text-black" : "text-slate-200"}`}>HMM Certificates Collection</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 640 640"
@@ -331,7 +362,7 @@ function DefaultPage() {
                       </a>
                     
                     <p class="mt-2 text-sm leading-normal">
-                      Completed the <span className='text-white'>Harvard ManageMentor program</span> through Chandigarh University, covering 10 modules in leadership and management.
+                      Completed the{" "} <span className={themeMode === "light" ? "text-slate-900 font-semibold" : "text-white"}> {" "}Harvard ManageMentor program</span> through Chandigarh University, covering 10 modules in leadership and management.
                       Built practical skills in decision-making, strategy, innovation, and effective team collaboration.
                     </p>
                   </div>
@@ -343,19 +374,16 @@ function DefaultPage() {
           </section>
 
 
-          <footer className="pb-6 text-[12px] sm:text-sm max-w-md text-slate-500 sm:pb-0">
-            <span className="inline-flex flex-wrap items-center gap-1 ">
-                  Made with{" "}
-                  <svg
-                    viewBox="0 0 32 32"
-                    width="16"
-                    height="16"
-                    className="inline align-middle fill-teal-400/80"
-                  >
-                    <path d="M16 28.2l-1.8-1.6C7.9 21.1 4 17.6 4 13.3 4 9.8 6.7 7 10.2 7c2 0 3.9 1 5.1 2.5C16.5 8 18.4 7 20.4 7 23.9 7 26.6 9.8 26.6 13.3c0 4.3-3.9 7.8-10.2 13.3l-0.4 0.4z"/>
-                  </svg>{" "}
+          <footer className="pb-6 text-[12px] sm:text-sm text-slate-500 sm:pb-0">
+              <p className='text-center mb-2'>
+                  Build with{" "} 
+                  <span className={themeMode === "light" ? "text-slate-900 font-semibold" : "text-white/80"}>React.js</span> and{" "} 
+                  <span className={themeMode === "light" ? "text-slate-900 font-semibold" : "text-white/80"}>Tailwind CSS</span>
+              </p>
+              <p className='text-center'>Deployed with {" "}
+                  <span className={themeMode === "light" ? "text-slate-900 font-semibold" : "text-white/80"}>Vercel</span>{" "}
                   by Siddhi Jaiswal • Portfolio 2026
-                </span>
+              </p>
           </footer>         
         </div>
        </div>
